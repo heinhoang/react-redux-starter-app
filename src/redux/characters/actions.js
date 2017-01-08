@@ -8,7 +8,7 @@ export function getCharacters() {
       .then(res => res.json())
       .then(res => res.results)
       .then(characters =>
-        dispatch(setCharacters(characters))
+        dispatch(setCharacters(characters)) // delegate dispatch to setCharacters
       );
 }
 

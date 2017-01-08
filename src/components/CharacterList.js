@@ -20,10 +20,12 @@ const CharacterList = ({ characters, setCharacter }) =>
     </ul>
   </div>;
 
+// `{ characters }` is state of store that you passed in at app.js
 const mapStateToProps = ({ characters }) => ({
   characters,
 });
 
+// `dispatch` is also of store in app.js
 const mapDispatchToProps = dispatch => ({
   setCharacter(id) {
     return () => {
@@ -33,4 +35,5 @@ const mapDispatchToProps = dispatch => ({
   },
 });
 
+// `connect` makes `characters` which is a prop of `mapStateToProps` and `etCharacter` of `mapDispatchToProps` to be parameter of `CharacterList` function
 export default connect(mapStateToProps, mapDispatchToProps)(CharacterList);
